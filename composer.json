@@ -1,0 +1,30 @@
+{
+    "name" : "webeith/imap-bundle",
+    "description" : "PHP imap bundle",
+    "type" : "symfony-bundle",
+    "authors" : [{
+        "name" : "imap-bundle",
+        "email" : "webeith@gmail.com"
+    }],
+    "keywords" : [
+        "imap"
+    ],
+    "license" : [
+        "MIT"
+    ],
+    "require" : {
+    },
+    "autoload" : {
+        "psr-0" : {
+            "Webeith\\ImapBundle" : ""
+        }
+    },
+    "target-dir" : "Webeith/ImapBundle",
+    "repositories" : [{
+    ],
+    "extra" : {
+    "branch-alias" : {
+            "dev-master" : "2.3-dev"
+        }
+    }
+}
