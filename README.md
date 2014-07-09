@@ -3,15 +3,34 @@ ImapBundle
 [![License](https://poser.pugx.org/webeith/imap-bundle/license.png)](https://packagist.org/packages/webeith/imap-bundle)
 [![Total Downloads](https://poser.pugx.org/webeith/imap-bundle/downloads.png)](https://packagist.org/packages/webeith/dnsbl-bundle)
 
-* [See how to use service](http://github.com/webeith/imap-bundle)
+* [See how to use service](http://github.com/webeith/php-imap)
 
 Usage Example
 -------------
 
 ``` php
-$this->getContainer()->get('imap');
+$this->getContainer()->get('imap')->getMailBox('mailbox_name');
 ```
+Configuration config.yml example
+-------------
 
+``` yml
+webeith_imap:
+    mailboxes:
+        hotmail_user
+            login: "example@hotmail.com"
+            password: "password"
+            connection_string: "{imap.gmail.com:993/imap/ssl}INBOX"
+            encoding: "utf-8"
+            attachments_dir: "/tmp/"
+        gmail_user_inbox:
+            login: "example@gmail.com"
+            password: "password"
+            connection_string: "{imap.gmail.com:993/imap/ssl}INBOX"
+            encoding: "utf-8"
+            attachments_dir: "/tmp/"
+
+```
 ## Installation
 
 ### Install via Composer
