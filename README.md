@@ -20,6 +20,7 @@ webeith_imap:
         hotmail_user
             login: "example@hotmail.com"
             password: "password"
+            port: 995
             connection_string: "{imap.gmail.com:993/imap/ssl}INBOX"
             encoding: "utf-8"
             attachments_dir: "/tmp/"
