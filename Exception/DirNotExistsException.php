@@ -2,7 +2,10 @@
 
 namespace Webeith\ImapBundle\Exception;
 
-
-class DirNotexistsException extends \Exception
+/**
+ * Class DirNotExistsException
+ * @package Webeith\ImapBundle\Exception
+ */
+class DirNotExistsException extends \Exception
 {
 }

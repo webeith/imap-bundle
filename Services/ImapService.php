@@ -2,8 +2,8 @@
 
 namespace Webeith\ImapBundle\Services;
 
-use Webeith\ImapBundle\Exception\DirNotExistsException,
-    Webeith\ImapBundle\Exception\NotFoundMailboxException;
+use Webeith\ImapBundle\Exception\DirNotExistsException;
+use Webeith\ImapBundle\Exception\NotFoundMailboxException;
 
 /**
  * ImapService
@@ -12,12 +12,12 @@ use Webeith\ImapBundle\Exception\DirNotExistsException,
 class ImapService
 {
     /**
-     * @var array
+     * @var array $config
      */
     protected $config = array();
 
     /**
-     * @var array
+     * @var array $mailboxes
      */
     protected $mailboxes = array();
 
@@ -26,7 +26,6 @@ class ImapService
      *
      * @param array $config
      *
-     * @return void
      */
     public function __construct(array $config)
     {
@@ -37,8 +36,10 @@ class ImapService
      * Create mailbox
      *
      * @param mixed $name
-     *
      * @return \ImapMailbox
+     * @throws \RuntimeException
+     * @throws DirNotExistsException
+     * @throws NotFoundMailboxException
      */
     public function getMailBox($name)
     {
@@ -47,7 +48,7 @@ class ImapService
         }
 
         if (!isset($this->config['mailboxes'][$name])) {
-            throw new NotFoundMailboxException('Not found config for "' .$name. '" mailbox');
+            throw new NotFoundMailboxException('Not found config for "' . $name . '" mailbox');
         }
 
         $config = $this->config['mailboxes'][$name];
