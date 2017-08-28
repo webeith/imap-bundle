@@ -17,7 +17,7 @@ Configuration config.yml example
 ``` yml
 webeith_imap:
     mailboxes:
-        hotmail_user
+        hotmail_user:
             login: "example@hotmail.com"
             password: "password"
             port: 995
